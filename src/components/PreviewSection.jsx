@@ -1,21 +1,10 @@
 import { forwardRef } from "react";
 import EmptyState from "@components/EmptyState";
 import CVTemplate from "@components/cv-templates/CVTemplate";
+import { isCvDataEmpty } from "@utils/utils";
 
 const PreviewSection = forwardRef(({ cvData }, ref) => {
-  const isEmpty =
-    !cvData ||
-    (!cvData.personalInfo?.fullName &&
-      !cvData.personalInfo?.summary &&
-      (!cvData.experiences || cvData.experiences.length === 0) &&
-      (!cvData.education || cvData.education.length === 0) &&
-      (!cvData.skills?.technicalSkills ||
-        cvData.skills.technicalSkills.length === 0) &&
-      (!cvData.skills?.professionalSkills ||
-        cvData.skills.professionalSkills.length === 0) &&
-      (!cvData.skills?.languages || cvData.skills.languages.length === 0) &&
-      (!cvData.skills?.certifications ||
-        cvData.skills.certifications.length === 0));
+  const isEmpty = isCvDataEmpty(cvData);
 
   return (
     <section className="hidden flex-1 overflow-y-auto md:block">

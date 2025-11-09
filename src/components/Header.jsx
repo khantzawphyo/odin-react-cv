@@ -2,16 +2,25 @@ import { toast } from "sonner";
 import { Button } from "@components/ui";
 import { Link, useLocation } from "react-router";
 import usePrintStore from "@stores/usePrintStore";
+import useHasCVData from "@hooks/useHasCVData";
 import LogoImage from "@assets/logo.png";
 
 const Header = () => {
   const location = useLocation();
   const { printFunction } = usePrintStore();
 
+  const hasCVData = useHasCVData();
+  const isEmpty = !hasCVData;
+
   const isTemplateSelectPage = location.pathname === "/create";
   const isEditorPage = location.pathname === "/editor";
 
   const handleExportCV = () => {
+    if (isEmpty) {
+      toast.warning("No CV data to export. Please add some information first.");
+      return;
+    }
+
     if (printFunction) {
       printFunction();
       toast.success("Exporting your CV...");
@@ -39,7 +48,16 @@ const Header = () => {
         </Link>
 
         <nav className="flex items-center gap-6 font-medium tracking-[0.2px]">
-          {isEditorPage && <Button onClick={handleExportCV}>Export CV</Button>}
+          {isEditorPage && (
+            <Button
+              onClick={handleExportCV}
+              // visually indicate disabled state when no data
+              className={isEmpty ? "cursor-not-allowed opacity-50" : ""}
+              aria-disabled={isEmpty}
+            >
+              Export CV
+            </Button>
+          )}
 
           {isTemplateSelectPage && !isEditorPage && (
             <Link to="/editor">

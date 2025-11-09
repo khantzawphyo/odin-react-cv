@@ -1,11 +1,33 @@
 import TemplateCard from "@components/TemplateCard";
 import { useNavigate } from "react-router";
+import React from "react";
 import {
   faBriefcase,
   faLandmark,
   faMagicWandSparkles,
 } from "@fortawesome/free-solid-svg-icons";
 import useTemplateStore from "@stores/useTemplateStore";
+
+const TEMPLATES = [
+  {
+    name: "Modern",
+    desc: "Clean and contemporary professional design",
+    icon: faBriefcase,
+    accent: "bg-gradient-to-br from-blue-500 to-purple-600",
+  },
+  {
+    name: "Creative",
+    desc: "Bold and innovative style to stand out",
+    icon: faMagicWandSparkles,
+    accent: "bg-gradient-to-br from-orange-500 to-red-600",
+  },
+  {
+    name: "Classic",
+    desc: "Timeless and elegant layout",
+    icon: faLandmark,
+    accent: "bg-gradient-to-br from-neutral-600 to-neutral-800",
+  },
+];
 
 export default function TemplateSelect() {
   const navigate = useNavigate();
@@ -16,26 +38,6 @@ export default function TemplateSelect() {
     navigate("/editor");
   };
 
-  const templates = [
-    {
-      name: "Modern",
-      desc: "Clean and contemporary professional design",
-      icon: faBriefcase,
-      accent: "bg-gradient-to-br from-blue-500 to-purple-600",
-    },
-    {
-      name: "Creative",
-      desc: "Bold and innovative style to stand out",
-      icon: faMagicWandSparkles,
-      accent: "bg-gradient-to-br from-orange-500 to-red-600",
-    },
-    {
-      name: "Classic",
-      desc: "Bold and innovative style to stand out",
-      icon: faLandmark,
-      accent: "bg-gradient-to-br from-neutral-600 to-neutral-800",
-    },
-  ];
 
   return (
     <section className="container mx-auto min-h-dvh px-6 py-16">
@@ -47,7 +49,7 @@ export default function TemplateSelect() {
       </p>
 
       <div className="grid gap-8 md:grid-cols-3">
-        {templates.map((t) => (
+        {TEMPLATES.map((t) => (
           <TemplateCard key={t.name} template={t} onSelect={handleSelect} />
         ))}
       </div>

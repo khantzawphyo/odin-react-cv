@@ -1,33 +1,18 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import FormSection from "@components/FormSection";
 import PreviewSection from "@components/PreviewSection";
-import usePersonalInfoStore from "@stores/usePersonalInfoStore";
-import useExperienceStore from "@stores/useExperienceStore";
-import useEducationStore from "@stores/useEducationStore";
-import useSkillsStore from "@stores/useSkillsStore";
-import usePrintStore from "@stores/usePrintStore";
+import useCVData from "@hooks/useCVData";
+import useRegisterPrint from "@hooks/useRegisterPrint";
 import { getPdfFileName } from "@utils/utils";
 
 export default function Editor() {
   const printRef = useRef();
-  const setPrintFunction = usePrintStore((state) => state.setPrintFunction);
-
-  const personalInfo = usePersonalInfoStore((state) => state.personalInfo);
-  const experiences = useExperienceStore((state) => state.experiences);
-  const education = useEducationStore((state) => state.education);
-  const skills = useSkillsStore((state) => state.skills);
-
-  const cvData = {
-    personalInfo,
-    experiences,
-    education,
-    skills,
-  };
+  const cvData = useCVData();
 
   const handlePrint = useReactToPrint({
     contentRef: printRef,
-    documentTitle: getPdfFileName(personalInfo.fullName),
+    documentTitle: getPdfFileName(cvData.personalInfo?.fullName),
     pageStyle: `
       @page {
         size: legal;
@@ -36,9 +21,7 @@ export default function Editor() {
     `,
   });
 
-  useEffect(() => {
-    setPrintFunction(handlePrint);
-  }, [handlePrint, setPrintFunction]);
+  useRegisterPrint(handlePrint);
 
   return (
     <main className="flex grow bg-neutral-50">

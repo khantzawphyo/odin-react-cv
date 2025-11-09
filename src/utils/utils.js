@@ -15,7 +15,6 @@ export const getProficiencyText = (level) => {
   return levels[level] || level || "";
 };
 
-
 export const getPdfFileName = (fullName) => {
   if (fullName && fullName.trim()) {
     const cleanName = fullName
@@ -28,3 +27,25 @@ export const getPdfFileName = (fullName) => {
   return "cv.pdf";
 };
 
+export const isCvDataEmpty = (cvData) => {
+  if (!cvData) return true;
+
+  const {
+    personalInfo = {},
+    experiences = [],
+    education = [],
+    skills = {},
+  } = cvData || {};
+
+  return (
+    !personalInfo ||
+    (!personalInfo?.fullName &&
+      !personalInfo?.summary &&
+      (!experiences || experiences.length === 0) &&
+      (!education || education.length === 0) &&
+      (!skills?.technicalSkills || skills.technicalSkills.length === 0) &&
+      (!skills?.professionalSkills || skills.professionalSkills.length === 0) &&
+      (!skills?.languages || skills.languages.length === 0) &&
+      (!skills?.certifications || skills.certifications.length === 0))
+  );
+};

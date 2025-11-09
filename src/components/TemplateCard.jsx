@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const TemplateCard = ({ template, onSelect }) => {
+const TemplateCard = ({ template, onSelect, onPreview }) => {
   const { name, desc, icon, accent } = template;
 
   return (
@@ -23,11 +23,29 @@ const TemplateCard = ({ template, onSelect }) => {
 
         <p className="mb-4 text-sm font-medium text-neutral-600">{desc}</p>
 
-        <button
-          className={`rounded-full px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-md ${accent}`}
-        >
-          Select {name}
-        </button>
+        <div className="flex items-center justify-center gap-3">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onSelect?.(name);
+            }}
+            className={`rounded-full px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-md ${accent}`}
+          >
+            Select {name}
+          </button>
+
+          {onPreview && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onPreview(template);
+              }}
+              className="rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50"
+            >
+              Preview
+            </button>
+          )}
+        </div>
       </div>
       <div className="absolute inset-0 rounded-xl ring-2 ring-transparent transition-all duration-300 group-hover:ring-neutral-300" />
     </div>
