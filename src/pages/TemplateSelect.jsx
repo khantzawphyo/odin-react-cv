@@ -1,9 +1,9 @@
 import TemplateCard from "@components/TemplateCard";
 import { useNavigate } from "react-router";
 import {
-  faFileAlt,
-  faPalette,
   faBriefcase,
+  faLandmark,
+  faMagicWandSparkles,
 } from "@fortawesome/free-solid-svg-icons";
 import useTemplateStore from "@stores/useTemplateStore";
 
@@ -19,30 +19,30 @@ export default function TemplateSelect() {
   const templates = [
     {
       name: "Modern",
-      desc: "Clean, professional, and optimized for readability.",
+      desc: "Clean and contemporary professional design",
       icon: faBriefcase,
-      accent: "bg-blue-500",
+      accent: "bg-gradient-to-br from-blue-500 to-purple-600",
     },
     {
       name: "Creative",
-      desc: "Stylish layout with vibrant highlights and design flair.",
-      icon: faPalette,
-      accent: "bg-pink-500",
+      desc: "Bold and innovative style to stand out",
+      icon: faMagicWandSparkles,
+      accent: "bg-gradient-to-br from-orange-500 to-red-600",
     },
     {
       name: "Classic",
-      desc: "Traditional layout that keeps things simple and elegant.",
-      icon: faFileAlt,
-      accent: "bg-green-500",
+      desc: "Bold and innovative style to stand out",
+      icon: faLandmark,
+      accent: "bg-gradient-to-br from-neutral-600 to-neutral-800",
     },
   ];
 
   return (
-    <section className="container min-h-dvh mx-auto px-6 py-16">
-      <h1 className="font-display mb-4 text-center text-4xl font-bold text-neutral-800">
+    <section className="container mx-auto min-h-dvh px-6 py-16">
+      <h1 className="font-display mb-2 text-center text-4xl font-bold text-neutral-800">
         Choose Your CV Template
-    </h1>
-      <p className="mb-12 text-center text-lg font-medium text-neutral-500">
+      </h1>
+      <p className="mb-8 text-center text-lg font-medium text-neutral-500">
         Pick a design that best represents your personality and profession.
       </p>
 

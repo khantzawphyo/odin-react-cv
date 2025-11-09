@@ -1,5 +1,5 @@
 import { toast } from "sonner";
-import { Button } from "./ui";
+import { Button } from "@components/ui";
 import { Link, useLocation } from "react-router";
 import usePrintStore from "@stores/usePrintStore";
 import LogoImage from "@assets/logo.png";

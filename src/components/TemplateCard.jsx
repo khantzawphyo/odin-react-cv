@@ -6,26 +6,32 @@ const TemplateCard = ({ template, onSelect }) => {
   return (
     <div
       onClick={() => onSelect(name)}
-      className="group relative cursor-pointer rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg"
+      className="group relative mx-auto w-full max-w-sm min-w-[280px] cursor-pointer rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg"
     >
-      <div className="flex flex-col items-center text-center">
-        <div
-          className={`mb-4 flex h-16 w-16 items-center justify-center rounded-full text-white ${accent}`}
-        >
-          <FontAwesomeIcon icon={icon} size="2x" />
+      <div
+        className={`mb-4 h-32 rounded-lg ${accent} flex items-center justify-center`}
+      >
+        <div className="text-center text-white">
+          <FontAwesomeIcon icon={icon} size="3x" className="opacity-90" />
         </div>
-        <h3 className="text-xl font-semibold text-neutral-800">{name}</h3>
-        <p className="mt-2 text-sm text-neutral-500">{desc}</p>
+      </div>
+
+      <div className="text-center">
+        <h3 className="font-display mb-2 text-xl font-semibold text-neutral-800">
+          {name}
+        </h3>
+
+        <p className="mb-4 text-sm font-medium text-neutral-600">{desc}</p>
 
         <button
-          className={`mt-6 rounded-full px-5 py-2 text-sm font-medium text-white transition ${accent} hover:opacity-90`}
+          className={`rounded-full px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-md ${accent}`}
         >
           Select {name}
         </button>
       </div>
-      <div className="absolute inset-0 rounded-2xl ring-2 ring-transparent transition group-hover:ring-blue-400" />
+      <div className="absolute inset-0 rounded-xl ring-2 ring-transparent transition-all duration-300 group-hover:ring-neutral-300" />
     </div>
   );
-}
+};
 
 export default TemplateCard;
