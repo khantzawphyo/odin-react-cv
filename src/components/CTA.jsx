@@ -3,7 +3,7 @@ import CTAIllustration from "@assets/Get-Inspired-Illustration.svg";
 
 const CTA = () => {
   return (
-    <section className="relative w-full overflow-hidden border-t border-neutral-200 bg-neutral-100 px-6 py-24">
+    <section className="relative w-full overflow-hidden border-t border-neutral-200 bg-white px-6 py-24">
       <div className="max-w-xl text-center md:mr-auto md:max-w-2xl md:pl-10 md:text-left">
         <h1 className="font-display mb-4 cursor-pointer text-3xl tracking-tight text-neutral-900 sm:text-4xl">
           Ready to build your{" "}
