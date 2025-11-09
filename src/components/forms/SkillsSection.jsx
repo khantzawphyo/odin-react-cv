@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Input, SkillInput, LanguageInput } from "@components/ui";
+import { Input, SkillInput, LanguageInput, Button } from "@components/ui";
 import useSkillsStore from "@stores/useSkillsStore";
 import { faUserTie, faCode } from "@fortawesome/free-solid-svg-icons";
 
@@ -116,13 +116,7 @@ const SkillsSection = () => {
           <h3 className="text-lg font-semibold text-neutral-900">
             Certifications
           </h3>
-          <button
-            type="button"
-            onClick={addCertification}
-            className="cursor-pointer rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
-          >
-            Add Certification
-          </button>
+          <Button onClick={addCertification}>Add Certification</Button>
         </div>
 
         <div className="space-y-4">
@@ -184,13 +178,12 @@ const SkillsSection = () => {
                 className="mt-4"
               />
               <div className="mt-4 flex justify-end">
-                <button
-                  type="button"
+                <Button
+                  variant="danger"
                   onClick={() => removeCertification(index)}
-                  className="rounded-lg border border-red-300 px-3 py-1 text-sm text-red-600 transition-colors hover:bg-red-50"
                 >
                   Remove
-                </button>
+                </Button>
               </div>
             </div>
           ))}

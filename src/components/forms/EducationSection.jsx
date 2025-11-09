@@ -1,5 +1,5 @@
 import useEducationStore from "@stores/useEducationStore";
-import { Input, Textarea } from "@components/ui";
+import { Input, Textarea, Button } from "@components/ui";
 
 const EducationSection = () => {
   const { education, addEducation, updateEducation, removeEducation } =
@@ -9,9 +9,7 @@ const EducationSection = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold text-neutral-900">Education</h3>
-        <button
-          type="button"
-          className="cursor-pointer rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
+        <Button
           onClick={() =>
             addEducation({
               institution: "",
@@ -26,7 +24,7 @@ const EducationSection = () => {
           }
         >
           Add Education
-        </button>
+        </Button>
       </div>
 
       {education.map((edu, index) => (
@@ -99,13 +97,9 @@ const EducationSection = () => {
           </div>
 
           <div className="mt-4 flex justify-end">
-            <button
-              type="button"
-              className="rounded-lg border border-red-300 px-3 py-1 text-sm text-red-600 transition-colors hover:bg-red-50"
-              onClick={() => removeEducation(index)}
-            >
+            <Button variant="danger" onClick={() => removeEducation(index)}>
               Remove
-            </button>
+            </Button>
           </div>
         </div>
       ))}

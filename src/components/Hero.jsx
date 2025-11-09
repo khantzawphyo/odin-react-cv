@@ -20,14 +20,14 @@ const Hero = () => {
         <AnimatedLink to="create">Get Started</AnimatedLink>
       </div>
 
-      <div className="pointer-events-none absolute -bottom-8 -left-6 z-0 h-auto w-60 lg:-left-10 lg:w-[310px] xl:w-[350px]">
+      <div className="pointer-events-none absolute -bottom-8 -left-6 z-0 hidden h-auto w-60 md:block lg:-left-10 lg:w-[310px] xl:w-[350px]">
         <img
           src={Illlustration1}
           alt="Decorative Illustration"
           className="h-auto w-full object-contain"
         />
       </div>
-      <div className="pointer-events-none absolute -right-6 -bottom-6 z-0 h-auto w-60 lg:-right-12 lg:-bottom-12 lg:w-[360px] xl:w-[400px]">
+      <div className="pointer-events-none absolute -right-6 -bottom-6 z-0 hidden h-auto w-60 md:block lg:-right-12 lg:-bottom-12 lg:w-[360px] xl:w-[400px]">
         <img
           src={Illlustration2}
           alt="Decorative Illustration"

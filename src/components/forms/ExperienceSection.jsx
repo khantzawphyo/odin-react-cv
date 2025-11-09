@@ -1,4 +1,5 @@
 import { Input, Textarea } from "@components/ui";
+import { Button } from "@components/ui";
 import useExperienceStore from "@stores/useExperienceStore";
 
 const ExperienceSection = () => {
@@ -11,9 +12,7 @@ const ExperienceSection = () => {
         <h3 className="text-lg font-semibold text-neutral-900">
           Work Experience
         </h3>
-        <button
-          type="button"
-          className="cursor-pointer rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
+        <Button
           onClick={() =>
             addExperience({
               company: "",
@@ -28,7 +27,7 @@ const ExperienceSection = () => {
           }
         >
           Add Experience
-        </button>
+        </Button>
       </div>
 
       {experiences.map((exp, index) => (
@@ -122,13 +121,12 @@ const ExperienceSection = () => {
           />
 
           <div className="mt-4 flex justify-end">
-            <button
-              type="button"
-              className="rounded-lg border border-red-300 px-3 py-1 text-sm text-red-600 transition-colors hover:bg-red-50"
+            <Button
+              variant="danger"
               onClick={() => removeExperience(index)}
             >
               Remove
-            </button>
+            </Button>
           </div>
         </div>
       ))}

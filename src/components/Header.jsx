@@ -1,6 +1,6 @@
-// components/Header.jsx
-import { Link, useLocation } from "react-router";
 import { toast } from "sonner";
+import { Button } from "./ui";
+import { Link, useLocation } from "react-router";
 import usePrintStore from "@stores/usePrintStore";
 import LogoImage from "@assets/logo.png";
 
@@ -10,9 +10,6 @@ const Header = () => {
 
   const isTemplateSelectPage = location.pathname === "/create";
   const isEditorPage = location.pathname === "/editor";
-
-  const buttonClasses =
-    "group h-8 cursor-pointer rounded-lg bg-white px-3 text-sm leading-8 text-zinc-950 shadow-[0_-1px_0_0px_#d4d4d8_inset,0_0_0_1px_#f4f4f5_inset,0_0.5px_0_1.5px_#fff_inset] select-none hover:bg-zinc-50 active:shadow-[-1px_0px_1px_0px_#e4e4e7_inset,1px_0px_1px_0px_#e4e4e7_inset,0px_0.125rem_1px_0px_#d4d4d8_inset]";
 
   const handleExportCV = () => {
     if (printFunction) {
@@ -42,19 +39,11 @@ const Header = () => {
         </Link>
 
         <nav className="flex items-center gap-6 font-medium tracking-[0.2px]">
-          {isEditorPage && (
-            <button onClick={handleExportCV} className={buttonClasses}>
-              <span className="block group-active:transform-[translate3d(0,1px,0)]">
-                Export CV
-              </span>
-            </button>
-          )}
+          {isEditorPage && <Button onClick={handleExportCV}>Export CV</Button>}
 
           {isTemplateSelectPage && !isEditorPage && (
-            <Link to="/editor" className={buttonClasses}>
-              <span className="block group-active:transform-[translate3d(0,1px,0)]">
-                Go to Editor
-              </span>
+            <Link to="/editor">
+              <Button>Go to Editor</Button>
             </Link>
           )}
 
@@ -72,10 +61,8 @@ const Header = () => {
               >
                 About
               </a>
-              <Link to="/create" className={buttonClasses}>
-                <span className="block group-active:transform-[translate3d(0,1px,0)]">
-                  Create CV
-                </span>
+              <Link to="/create">
+                <Button>Create CV</Button>
               </Link>
             </>
           )}
