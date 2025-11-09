@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
+import EmptyState from "@components/EmptyState";
 import CVTemplate from "@components/cv-templates/CVTemplate";
-import EmptyState from "./EmptyState";
 
 const PreviewSection = forwardRef(({ cvData }, ref) => {
   const isEmpty =
@@ -20,7 +20,7 @@ const PreviewSection = forwardRef(({ cvData }, ref) => {
   return (
     <section className="hidden flex-1 overflow-y-auto md:block">
       <div className="mx-auto max-w-4xl">
-        <div className="border-2 border-neutral-300 bg-white p-6 shadow-lg">
+        <div className="border-2 border-neutral-300 bg-white shadow-lg">
           <div ref={ref}>
             {!isEmpty ? <CVTemplate cvData={cvData} /> : <EmptyState />}
           </div>

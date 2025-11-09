@@ -1,8 +1,7 @@
-// src/stores/useTemplateStore.js
 import { create } from "zustand";
 
 const useTemplateStore = create((set) => ({
-  selectedTemplate: "modern", // default
+  selectedTemplate: "modern",
 
   setTemplate: (template) => set({ selectedTemplate: template }),
 }));

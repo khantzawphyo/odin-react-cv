@@ -1,18 +1,13 @@
-// src/stores/useSkillsStore.js
 import { create } from "zustand";
 
 const useSkillsStore = create((set) => ({
   skills: {
-    // Technical skills with proficiency
     technicalSkills: [],
-    // Professional/soft skills
     professionalSkills: [],
-    // Languages with proficiency
     languages: [],
     certifications: [],
   },
 
-  // Technical Skills
   addTechnicalSkill: (skill, proficiency = "intermediate") =>
     set((state) => ({
       skills: {
