@@ -6,9 +6,9 @@ const Hero = () => {
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-[#fdfbfb] to-[#ebedee]">
       <div className="relative z-10 mx-auto max-w-4xl px-6 py-24 text-center sm:px-0 sm:py-32 md:py-32">
-        <h1 className="font-display mb-4 bg-linear-to-r from-neutral-950 to-neutral-900 bg-clip-text text-5xl leading-none font-bold tracking-tighter text-transparent md:text-6xl">
+        <h1 className="group font-display mb-4 cursor-pointer bg-linear-to-r from-neutral-950 to-neutral-900 bg-clip-text text-5xl leading-none font-bold tracking-tighter text-transparent md:text-6xl">
           Stop{" "}
-          <span className="relative z-10 cursor-pointer font-bold text-neutral-900 after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:z-[-1] after:h-full after:w-full after:origin-bottom-right after:scale-x-0 after:bg-amber-300 after:transition-transform after:duration-600 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100">
+          <span className="relative z-10 cursor-pointer px-2 font-bold text-neutral-900 after:pointer-events-none after:absolute after:bottom-0 after:left-0.5 after:z-[-1] after:h-2 after:w-full after:origin-bottom after:rounded after:bg-amber-300 after:transition-all after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] group-hover:after:h-full">
             Stressing
           </span>{" "}
           <br className="sm:hidden" />

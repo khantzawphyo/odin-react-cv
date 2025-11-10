@@ -15,12 +15,16 @@ const Footer = () => {
         <div className="text-center sm:text-left">
           <h3 className="font-display mb-2 text-lg font-bold text-white">
             CVBuilder{" "}
-            <span className="text-sm font-sans font-light">
+            <span className="font-sans text-sm font-light">
               &mdash; A Learning Project
             </span>
           </h3>
-          <p className="">
-            Built with ❤️ by{" "}
+          <p>
+            Built with{" "}
+            <span className="inline-block cursor-pointer transition-transform duration-150 ease-out hover:scale-125">
+              ❤️
+            </span>{" "}
+            by{" "}
             <span className="relative cursor-pointer font-medium text-neutral-300 transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-amber-500 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:text-white hover:after:origin-bottom-left hover:after:scale-x-100">
               Khant Zaw Phyo
             </span>
@@ -31,7 +35,7 @@ const Footer = () => {
         </div>
 
         <div className="text-center sm:text-right">
-          <h3 className="mb-3 text-sm font-semibold tracking-wider uppercase">
+          <h3 className="</p>uppercase mb-3 text-sm font-semibold tracking-wider">
             Get in touch
           </h3>
 

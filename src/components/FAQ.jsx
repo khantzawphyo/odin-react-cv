@@ -41,7 +41,7 @@ export default function FAQ() {
       <div className="mb-16 text-center">
         <h2 className="font-display text-3xl tracking-tight text-neutral-900 sm:text-4xl">
           Frequently Asked{" "}
-          <span className="relative z-10 cursor-pointer font-bold after:absolute after:bottom-0 after:left-0 after:z-[-1] after:h-full after:w-full after:origin-bottom-right after:scale-x-0 after:bg-amber-300 after:transition-transform after:duration-600 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:text-neutral-900 hover:after:origin-bottom-left hover:after:scale-x-100">
+          <span className="relative z-10 cursor-pointer px-2 font-bold text-neutral-900 after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:z-[-1] after:h-2 after:w-full after:origin-bottom after:rounded-xs after:bg-amber-300 after:transition-all after:duration-500 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:h-full">
             Questions
           </span>
         </h2>
