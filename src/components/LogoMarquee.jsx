@@ -22,7 +22,7 @@ const LogoMarquee = () => {
   return (
     <section className="border-t border-neutral-200 bg-white py-6">
       <div className="mb-4 text-center md:mb-6">
-        <h2 className="font-sans text-sm font-medium tracking-wider text-neutral-600 uppercase md:text-base">
+        <h2 className="font-display text-sm font-medium tracking-widest text-neutral-600 uppercase md:text-base">
           Built using
         </h2>
       </div>

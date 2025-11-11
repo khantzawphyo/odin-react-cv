@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
 
         <div className="text-center sm:text-right">
-          <h3 className="</p>uppercase mb-3 text-sm font-semibold tracking-wider">
+          <h3 className="</p>uppercase mb-3 text-sm font-semibold tracking-widest uppercase">
             Get in touch
           </h3>
 
