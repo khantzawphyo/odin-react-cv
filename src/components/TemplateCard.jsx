@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import BackgroundPattern from "@assets/top_background.png";
 
 const TemplateCard = ({ template, onSelect, onPreview }) => {
   const { name, desc, icon, accent } = template;
@@ -9,10 +10,19 @@ const TemplateCard = ({ template, onSelect, onPreview }) => {
       className="group relative mx-auto w-full max-w-sm min-w-[280px] cursor-pointer rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg"
     >
       <div
-        className={`mb-4 h-32 rounded-lg ${accent} flex items-center justify-center`}
+        className={`mb-4 h-32 rounded-lg ${accent} relative flex items-center justify-center overflow-hidden`}
       >
-        <div className="text-center text-white">
-          <FontAwesomeIcon icon={icon} size="3x" className="opacity-90" />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${BackgroundPattern})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+        <div className="relative z-10 text-center text-white">
+          <FontAwesomeIcon icon={icon} size="3x" className="opacity-95" />
         </div>
       </div>
 
@@ -29,7 +39,7 @@ const TemplateCard = ({ template, onSelect, onPreview }) => {
               e.stopPropagation();
               onSelect?.(name);
             }}
-            className={`rounded-full px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-md ${accent}`}
+            className="cursor-pointer rounded-full bg-neutral-900 px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-neutral-800 hover:shadow-md"
           >
             Select {name}
           </button>
@@ -47,7 +57,6 @@ const TemplateCard = ({ template, onSelect, onPreview }) => {
           )}
         </div>
       </div>
-      <div className="absolute inset-0 rounded-xl ring-2 ring-transparent transition-all duration-300 group-hover:ring-neutral-300" />
     </div>
   );
 };

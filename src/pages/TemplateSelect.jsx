@@ -13,19 +13,19 @@ const TEMPLATES = [
     name: "Modern",
     desc: "Clean and contemporary professional design",
     icon: faBriefcase,
-    accent: "bg-gradient-to-br from-blue-500 to-purple-600",
+    accent: "bg-orange-500",
   },
   {
     name: "Creative",
     desc: "Bold and innovative style to stand out",
     icon: faMagicWandSparkles,
-    accent: "bg-gradient-to-br from-orange-500 to-red-600",
+    accent: "bg-red-500",
   },
   {
     name: "Classic",
     desc: "Timeless and elegant layout",
     icon: faLandmark,
-    accent: "bg-gradient-to-br from-neutral-600 to-neutral-800",
+    accent: "bg-fuchsia-600",
   },
 ];
 
@@ -38,10 +38,9 @@ export default function TemplateSelect() {
     navigate("/editor");
   };
 
-
   return (
-    <section className="container mx-auto min-h-dvh px-6 py-16">
-      <h1 className="font-display mb-2 text-center text-4xl font-bold text-neutral-800">
+    <section className="container min-h-screen mx-auto px-6 py-16">
+      <h1 className="font-display -mt-5 mb-2 text-center text-4xl font-bold text-neutral-800">
         Choose Your CV Template
       </h1>
       <p className="mb-8 text-center text-lg font-medium text-neutral-500">
