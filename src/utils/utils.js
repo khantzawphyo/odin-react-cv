@@ -1,5 +1,33 @@
-export const formatUrl = (url) =>
-  url ? url.replace(/^https?:\/\/(www\.)?/, "") : "";
+/**
+ * Normalize a URL by removing the protocol (http/https), optional "www." prefix, and any trailing slash.
+ *
+ * If the input is not a non-empty string, the function returns an empty string.
+ *
+ * Notes:
+ * - The removal of the protocol and "www." is case-insensitive.
+ * - The function does not validate that the remaining string is a well-formed hostname or path — it only strips the specified parts.
+ *
+ * @param {string} url - The URL to format (e.g. "https://www.example.com/").
+ * @returns {string} The formatted URL without protocol, "www." prefix, or trailing slash (e.g. "example.com"), or an empty string for invalid input.
+ *
+ * @example
+ * formatUrl("https://www.example.com/"); // "example.com"
+ * @example
+ * formatUrl("http://sub.domain.org/path/"); // "sub.domain.org/path"
+ * @example
+ * formatUrl(""); // ""
+ * @example
+ * formatUrl(null); // ""
+ */
+export const formatUrl = (url) => {
+  if (typeof url !== "string" || url.length === 0) {
+    return "";
+  }
+  let formattedUrl = url;
+  formattedUrl = formattedUrl.replace(/^(https?:\/\/)?(www\.)?/i, "");
+  formattedUrl = formattedUrl.replace(/\/$/, "");
+  return formattedUrl;
+};
 
 export const getProficiencyText = (level) => {
   const levels = {
