@@ -9,7 +9,7 @@ const Hero = () => {
         <h1 className="group font-display mb-4 cursor-pointer bg-linear-to-r from-neutral-950 to-neutral-900 bg-clip-text text-5xl leading-none font-bold tracking-tighter text-transparent md:text-6xl">
           Stop{" "}
           <span
-            class="relative z-10 cursor-pointer px-2 leading-snug font-bold text-neutral-900 group-hover:text-neutral-800 after:pointer-events-none after:absolute after:bottom-0 after:left-0.5 after:z-[-1] after:h-full after:w-full after:origin-bottom after:rounded-xs after:bg-amber-300 after:transition-all after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] md:after:h-2 md:group-hover:after:h-full md:hover:after:h-full"
+            class="relative z-10 cursor-pointer px-2 leading-snug font-bold text-neutral-900 group-hover:text-neutral-800 after:pointer-events-none after:absolute after:bottom-0 after:left-0.5 after:z-[-1] after:h-full after:w-full after:origin-bottom after:rounded-xs after:bg-amber-300 after:transition-all after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:text-neutral-800 md:after:h-2 md:group-hover:after:h-full md:hover:after:h-full"
             tabindex="0"
           >
             Stressing
