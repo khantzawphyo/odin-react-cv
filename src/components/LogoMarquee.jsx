@@ -2,6 +2,7 @@ import Marquee from "react-fast-marquee";
 
 import ViteLogo from "../assets/logos/vite.svg";
 import ReactLogo from "../assets/logos/react.svg";
+import ReactRouterLogo from "../assets/logos/reactrouter.svg";
 import TailwindLogo from "../assets/logos/tailwindcss.svg";
 import JavaScriptLogo from "../assets/logos/javascript.svg";
 import ZustandLogo from "../assets/logos/zustand.svg";
@@ -11,6 +12,7 @@ import VSCodeLogo from "../assets/logos/vscode.svg";
 const techStack = [
   { name: "Vite", src: ViteLogo },
   { name: "React", src: ReactLogo },
+  { name: "React Router", src: ReactRouterLogo },
   { name: "Tailwind CSS", src: TailwindLogo },
   { name: "JavaScript", src: JavaScriptLogo },
   { name: "Zustand", src: ZustandLogo },
